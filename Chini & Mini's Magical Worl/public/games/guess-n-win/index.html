@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>GUESS n WIN - Chini & Mini's Magical World</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="guess_n_win.css">
+</head>
+<body>
+  <!-- Return to Explore World Navigation Bar -->
+  <header class="game-nav-header">
+    <a href="/#explore" class="nav-pill-btn" title="Return to Chini & Mini's Magical World">
+      <span>←</span> Back to Explore World
+    </a>
+    <div class="nav-actions-right">
+      <button id="sound-toggle-btn" class="nav-pill-btn" type="button" aria-label="Toggle Sound Effects">
+        🔊 Sound On
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Game Stage -->
+  <main class="game-wrapper">
+    <!-- Title -->
+    <div class="game-title-group">
+      <h1 class="game-title">
+        <span>GUESS n WIN</span>
+        <span aria-hidden="true">🎲✨</span>
+      </h1>
+      <p class="game-subtitle">Can you find the secret magical number from 1 to 100?</p>
+    </div>
+
+    <!-- Scoreboard Stats -->
+    <div class="scoreboard-container" role="region" aria-label="Game Statistics">
+      <div class="score-card">
+        <span class="score-label">🎯 Attempts</span>
+        <div id="attempts-count" class="score-value">0</div>
+      </div>
+      <div class="score-card best-card">
+        <span class="score-label">⭐ Best Record</span>
+        <div id="best-record" class="score-value">—</div>
+      </div>
+      <div class="score-card">
+        <span class="score-label">🏆 Games Won</span>
+        <div id="games-won" class="score-value">0</div>
+      </div>
+    </div>
+
+    <!-- Interactive Game Card -->
+    <section class="stage-card" aria-label="Number Guessing Area">
+      <!-- Mystery Box with Secret Number -->
+      <div id="secret-box" class="secret-number-box" aria-live="polite">
+        <span id="secret-char" class="secret-char">?</span>
+      </div>
+
+      <!-- Current Narrowing Range Hint -->
+      <div id="range-hint" class="range-hint-badge">
+        Possible Range: 1 – 100
+      </div>
+
+      <!-- Live Feedback Banner -->
+      <div id="feedback-banner" class="feedback-banner neutral" role="status" aria-live="assertive">
+        Pick any number between 1 and 100!
+      </div>
+
+      <!-- Guess Input Form -->
+      <form id="guess-form" class="guess-form" onsubmit="return false;">
+        <input
+          type="number"
+          id="guess-input"
+          class="guess-input"
+          min="1"
+          max="100"
+          placeholder="Enter 1–100"
+          inputmode="numeric"
+          autocomplete="off"
+          aria-label="Enter your guess between 1 and 100"
+        />
+        <button id="guess-btn" class="guess-submit-btn" type="button">
+          <span>Guess! 🎯</span>
+        </button>
+      </form>
+
+      <!-- Play Again Button (shown on win) -->
+      <button id="play-again-btn" class="play-again-btn" type="button" style="display: none;">
+        <span>Play Another Game 🔄</span>
+      </button>
+
+      <!-- Previous Guesses Chips -->
+      <div id="history-section" class="history-section" style="display: none;">
+        <div class="history-label">Previous Guesses:</div>
+        <div id="history-chips" class="history-chips" aria-label="List of previous guesses"></div>
+      </div>
+    </section>
+
+    <!-- Instructions -->
+    <aside class="instructions-box" aria-label="How to play">
+      <strong>How to Play:</strong> Guess the secret number from <strong>1 to 100</strong>. After each guess, clues will guide you whether the secret number is <strong>higher ⬆️</strong> or <strong>lower ⬇️</strong>. Try to solve it in the fewest attempts!
+    </aside>
+  </main>
+
+  <script src="guess_n_win.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/games/:path*",
+      "destination": "/games/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

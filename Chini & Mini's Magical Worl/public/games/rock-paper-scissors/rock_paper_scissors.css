@@ -1,0 +1,197 @@
+/* Rock Paper Scissors - Game Stylesheet */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0f172a;
+    background: radial-gradient(circle at center, #1e1b4b 0%, #0f172a 100%);
+    font-family: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 20px 16px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Return to Explore World Navigation Bar */
+.game-top-bar {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 24px;
+}
+
+.return-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    color: #1e1b4b;
+    border: 2px solid #cbd5e1;
+    border-radius: 9999px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.return-button:hover {
+    background-color: #f1f5f9;
+    transform: translateY(-2px);
+}
+
+.return-button:active {
+    transform: translateY(1px);
+}
+
+.game-container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    color: white;
+    font-size: clamp(24px, 5vw, 36px);
+    font-weight: bold;
+    margin: 0 0 24px 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.moves-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.move-button {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 3px solid white;
+    height: 120px;
+    width: 120px;
+    border-radius: 60px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.move-button:hover,
+.move-button:focus-visible {
+    transform: scale(1.08);
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: #facc15;
+    outline: none;
+}
+
+.move-button:active {
+    transform: scale(0.96);
+}
+
+.move-icon {
+    height: 60px;
+    width: 60px;
+    background: transparent;
+    object-fit: contain;
+}
+
+.css-result {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    min-height: 36px;
+    margin: 16px 0;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.css-moves {
+    color: white;
+    font-size: 18px;
+    min-height: 48px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.css-moves .move-icon {
+    height: 45px;
+    width: 45px;
+    vertical-align: middle;
+}
+
+.css-score {
+    font-size: 18px;
+    margin-top: 24px;
+    margin-bottom: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 24px;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.reset-button {
+    background: #ffffff;
+    color: #0f172a;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 22px;
+    border-radius: 9999px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.reset-button:hover {
+    background-color: #f1f5f9;
+    transform: scale(1.04);
+}
+
+.reset-button:active {
+    transform: scale(0.98);
+}
+
+/* Mobile responsive adjustments to prevent horizontal overflow */
+@media (max-width: 480px) {
+    .move-button {
+        height: min(95px, 27vw);
+        width: min(95px, 27vw);
+        border-radius: 50%;
+    }
+
+    .move-icon {
+        height: min(48px, 14vw);
+        width: min(48px, 14vw);
+    }
+
+    .moves-row {
+        gap: 8px;
+    }
+
+    .css-result {
+        font-size: 22px;
+    }
+
+    .css-moves {
+        font-size: 16px;
+    }
+}

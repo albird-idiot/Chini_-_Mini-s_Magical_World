@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Snake Adventure - Chini & Mini's Magical World</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="snake.css">
+</head>
+<body>
+  <!-- Return to Explore World Navigation Bar -->
+  <header class="game-nav-header">
+    <a href="/#explore" class="nav-pill-btn" title="Return to Chini & Mini's Magical World">
+      <span>←</span> Back to Explore World
+    </a>
+    <div class="nav-actions-right">
+      <button id="sound-toggle-btn" class="nav-pill-btn" type="button" aria-label="Toggle Sound Effects">
+        🔊 Sound On
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Game Stage -->
+  <main class="game-wrapper">
+    <!-- Game Title -->
+    <div class="game-title-group">
+      <h1 class="game-title">
+        <span>Snake Adventure</span>
+        <span aria-hidden="true">🐍✨</span>
+      </h1>
+      <p class="game-subtitle">Guide the cheerful snake to collect sweet treats in the garden!</p>
+    </div>
+
+    <!-- Live Scoreboard -->
+    <div class="scoreboard-container" role="region" aria-label="Game Scores">
+      <div class="score-card">
+        <span class="score-label">🍎 Current Score</span>
+        <div id="current-score" class="score-value">0</div>
+      </div>
+      <div class="score-card best-card">
+        <span class="score-label">⭐ Highest Score</span>
+        <div id="best-score" class="score-value">0</div>
+      </div>
+    </div>
+
+    <!-- Responsive Game Canvas with Overlays -->
+    <div class="canvas-wrapper">
+      <canvas id="game-canvas" width="600" height="600" aria-label="Snake Game Board"></canvas>
+
+      <!-- Ready Screen Overlay -->
+      <div id="ready-overlay" class="canvas-overlay">
+        <div class="overlay-emoji" aria-hidden="true">🐍🍎</div>
+        <h2 class="overlay-title">Ready to Slither?</h2>
+        <p class="overlay-desc">Use Arrow Keys or WASD to guide your snake. Collect juicy apples and beat your record!</p>
+        <button id="start-btn" class="overlay-btn-primary" type="button">
+          <span>Start Adventure! 🚀</span>
+        </button>
+      </div>
+
+      <!-- Paused Screen Overlay -->
+      <div id="pause-overlay" class="canvas-overlay hidden">
+        <div class="overlay-emoji" aria-hidden="true">⏸️</div>
+        <h2 class="overlay-title">Game Paused</h2>
+        <p class="overlay-desc">Take a little breather! Press Space or tap Resume whenever you are ready.</p>
+        <button id="resume-btn" class="overlay-btn-primary" type="button">
+          <span>Resume Adventure ▶️</span>
+        </button>
+      </div>
+
+      <!-- Game Over Screen Overlay -->
+      <div id="gameover-overlay" class="canvas-overlay hidden">
+        <div class="overlay-emoji" aria-hidden="true">💫</div>
+        <h2 class="overlay-title">Adventure Ended!</h2>
+        <div id="new-record-badge" class="record-badge" style="display: none;">
+          🎉 NEW HIGHEST RECORD! 🎉
+        </div>
+        <p class="overlay-desc">You scored <strong id="final-score" style="color: #fef08a; font-size: 1.3rem;">0</strong> points!</p>
+        <button id="restart-btn" class="overlay-btn-primary" type="button">
+          <span>Play Again 🔄</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Secondary Controls Bar -->
+    <div class="game-controls-bar">
+      <button id="pause-btn" class="control-action-btn" type="button">
+        ⏸️ Pause
+      </button>
+    </div>
+
+    <!-- Mobile Touch Directional Pad (D-Pad) -->
+    <div class="dpad-container" role="group" aria-label="Touch Directional Controls">
+      <button id="dpad-up" class="dpad-btn" type="button" aria-label="Move Up">▲</button>
+      <div class="dpad-row">
+        <button id="dpad-left" class="dpad-btn" type="button" aria-label="Move Left">◀</button>
+        <button id="dpad-down" class="dpad-btn" type="button" aria-label="Move Down">▼</button>
+        <button id="dpad-right" class="dpad-btn" type="button" aria-label="Move Right">▶</button>
+      </div>
+    </div>
+
+    <!-- Instructions Box -->
+    <aside class="instructions-box" aria-label="How to play">
+      <strong>How to Play:</strong> Use Arrow Keys or <strong>W, A, S, D</strong> to steer. Press <strong>Space</strong> or <strong>P</strong> to pause. On mobile, swipe on the board or tap the arrow buttons!
+    </aside>
+  </main>
+
+  <script src="snake.js"></script>
+</body>
+</html>

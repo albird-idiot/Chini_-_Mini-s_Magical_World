@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors - Chini & Mini's Magical World</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="rock_paper_scissors.css">
+</head>
+<body>
+    <header class="game-top-bar">
+        <a href="/#explore" class="return-button" title="Return to Chini & Mini's Magical World">
+            <span>←</span> Back to Explore World
+        </a>
+    </header>
+
+    <main class="game-container">
+        <h1 class="title">Rock Paper Scissors</h1>
+
+        <div class="moves-row" role="group" aria-label="Game moves">
+            <button onclick="playGame('rock');" class="move-button" aria-label="Play Rock" title="Choose Rock">
+                <img src="image/rock-emoji.png" class="move-icon" alt="Rock">
+            </button>
+
+            <button onclick="playGame('paper');" class="move-button" aria-label="Play Paper" title="Choose Paper">
+                <img src="image/paper-emoji.png" class="move-icon" alt="Paper">
+            </button>
+
+            <button onclick="playGame('scissors');" class="move-button" aria-label="Play Scissors" title="Choose Scissors">
+                <img src="image/scissors-emoji.png" class="move-icon" alt="Scissors">
+            </button>
+        </div>
+
+        <p class="js-result css-result" aria-live="polite"></p>
+        <p class="js-moves css-moves" aria-live="polite"></p>
+        <p class="js-score css-score" aria-live="polite"></p>
+
+        <button class="reset-button" onclick="resetScore();">Reset Score</button>
+    </main>
+
+    <script src="rock_paper_scissors.js"></script>
+</body>
+</html>
